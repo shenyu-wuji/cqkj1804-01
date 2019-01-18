@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>项目标题</title>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="stylesheet" type="text/css"
+	href="lib/bootstrap/css/bootstrap.css">
+
+<link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
+<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+
+<script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+<!-- Demo page code -->
+
+<style type="text/css">
+#line-chart {
+	height: 300px;
+	width: 800px;
+	margin: 0px auto;
+	margin-top: 1em;
+}
+
+.brand {
+	font-family: georgia, serif;
+}
+
+.brand .first {
+	color: #ccc;
+	font-style: italic;
+}
+
+.brand .second {
+	color: #fff;
+	font-weight: bold;
+}
+</style>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="../assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="../assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="../assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="../assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+	<!--<![endif]-->
+	<!-- 标题栏 -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<ul class="nav pull-right">
+				<li><a href="#"
+					class="hidden-phone visible-tablet visible-desktop" role="button">设置</a></li>
+				<li id="fat-menu" class="dropdown"><a href="#" role="button"
+					class="dropdown-toggle" data-toggle="dropdown"> <i
+						class="icon-user"></i> 用户名 <i class="icon-caret-down"></i>
+				</a>
+
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#">操作1</a></li>
+						<li class="divider"></li>
+						<!-- 隐藏设置 -->
+						<!-- <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
+						<li class="divider visible-phone"></li> -->
+						<li><a tabindex="-1" href="sign-in.html">退出</a></li>
+					</ul></li>
+
+			</ul>
+			<a class="brand" href="index.html"><span class="first">项目</span>
+				<span class="second">名称</span></a>
+		</div>
+	</div>
+
+	<!-- 左菜单栏 -->
+	<div class="sidebar-nav">
+		<a href="#user-menu" class="nav-header collapsed"
+			data-toggle="collapse"><i class="icon-dashboard"></i>用户管理 <i
+			class="icon-chevron-up"></i></a>
+		<ul id="user-menu" class="nav nav-list collapse">
+			<li><a data-href="users.html">用户查询</a></li>
+			<li><a data-href="404.html">404 page</a></li>
+		</ul>
+		<a href="#others" class="nav-header collapsed" data-toggle="collapse"><i
+			class="icon-dashboard"></i>其它扩展 <i class="icon-chevron-up"></i></a>
+		<ul id="others" class="nav nav-list collapse">
+			<li><a data-href="users.html">菜单1</a></li>
+			<li><a data-href="404.html">菜单2</a></li>
+			<li><a data-href="500.html">菜单3</a></li>
+		</ul>
+	</div>
+
+	<div class="content">
+		<div
+			style="position: absolute; left: 0px; top: 0px; bottom: 0px; right: 0px; padding: 0px">
+			<iframe id="contextFrame" name="contextFrame" src="users.html"
+				width="100%" height="100%"></iframe>
+		</div>
+	</div>
+
+
+
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$("[rel=tooltip]").tooltip();
+		$(function() {
+			$('.demo-cancel-click').click(function() {
+				return false;
+			});
+
+			// 初始化菜单点击事件
+			$(".collapse li").each(function(index) {
+				var curUrl = $(this).find("a").attr("data-href");
+				$(this).click(function() {
+					$("#contextFrame").attr("src", curUrl);
+				});
+
+				$(this).css("cursor", "pointer");
+			});
+
+		});
+	</script>
+
+</body>
+</html>
+
+
